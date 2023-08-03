@@ -1,0 +1,17 @@
+.search-container {
+    width: fit-content;
+}
+.query-result {
+    width: 100%;
+}
+.query-result:hover {
+    background-color: lightgray;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+}
+.input-container>input {
+    font-size: large;
+}
