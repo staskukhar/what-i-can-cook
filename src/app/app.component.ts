@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IngredientsSearcherComponent } from './components/ingredients-searcher/ingredients-searcher.component';
 
 @Component({
   selector: 'app-root',
