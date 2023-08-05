@@ -1,7 +1,9 @@
 <div class="search-container">
   <div class="input-container">
     <input type="text">
-    <button (click)="ingredientsSearching()">-></button>
+    <button (click)="ingredientsSearching()">
+      <img src="assets/images/loupe.png" alt="search">
+    </button>
   </div>
   <div class='query-result' 
     *ngFor="let ingredient of ingredients"
