@@ -1,0 +1,26 @@
+.ingredients-container {
+    width: fit-content;
+    margin: auto;
+}
+.ingredients-header {
+    text-align: center; /* Center the text horizontally */
+    font-weight: bold; /* Optionally add styling to the header */
+    font-size: large;
+}
+.ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
+    gap: 10px; /* Adjust this value for desired spacing between items */
+    justify-items: center; /* Center items horizontally within each column */
+    font-size: large;
+}
+.item {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: lightgreen;
+}
+.item:hover {
+    border-radius: 8px;
+    background-color: lightsalmon;
+}
