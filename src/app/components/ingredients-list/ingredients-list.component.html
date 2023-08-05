@@ -1,3 +1,8 @@
-<div *ngFor="let ingredient of ingredientsList" (click)="removeIngredient(ingredient)">
-    {{ingredient.name}}
+<div class="ingredients-container">
+    <div class="ingredients-header">My ingredients:</div>
+    <div class="ingredients-list">
+        <div class="item" *ngFor="let ingredient of ingredientsList" (click)="removeIngredient(ingredient)">
+            <span>{{ingredient.name}}</span>
+        </div>
+    </div>
 </div>
