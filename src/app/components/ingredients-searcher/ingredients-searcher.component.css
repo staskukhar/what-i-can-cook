@@ -2,15 +2,23 @@
     width: fit-content;
 }
 .query-result {
-    width: 100%;
+    width: auto;
+    padding: 5px;
+}
+.query-result>span {
+    font-size: large;
 }
 .query-result:hover {
-    background-color: lightgray;
+    background-color: lightgreen;
+    border-radius: 8px;
 }
-
 .input-container {
     display: flex;
     flex-direction: row;
+}
+.input-container>button>img {
+    align-self: center;
+    height: 20px;
 }
 .input-container>input {
     font-size: large;
