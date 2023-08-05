@@ -4,3 +4,9 @@
     width: fit-content;
     padding-top: 20px;
 }
+
+#my-list {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
