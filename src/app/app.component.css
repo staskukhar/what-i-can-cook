@@ -1,12 +1,8 @@
-.searcher {
-    display: block;
-    margin: auto;
-    width: fit-content;
-    padding-top: 20px;
+.app-container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
 }
-
-#my-list {
-    display: block;
-    margin: auto;
-    width: 100%;
+#main-menu {
+    display: flex;
 }
