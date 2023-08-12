@@ -10,14 +10,15 @@ import { MyIngredientsListService } from 'src/app/services/my-ingredients-list.s
   styleUrls: ['./ingredients-searcher.component.css'],
 })
 export class IngredientsSearcherComponent{
+  searchQuery: string = '';
 
   public ingredients!: Ingredient[];
 
   constructor(protected ingredientsService: IngredientsService,
     protected myIngredientsListService: MyIngredientsListService) { }
 
-  ingredientsSearching() {
-    this.ingredients = this.ingredientsService.getIngredients();
+  onSearch() {
+    this.ingredients = this.ingredientsService.getIngredients(this.searchQuery);
   }
   pickIngredient(ingredient: Ingredient) : void {
     this.myIngredientsListService.addIngredient(ingredient);
