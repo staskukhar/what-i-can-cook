@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+}
+#searcher {
+    display: block;
+    margin-right: auto;
+    width: fit-content;
+    padding: 10px;
+}
+
+#my-list {
+    display: block;
+    margin-left: auto;
+    width: 100%;
+    padding: 10px;
+}
