@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IngredientsService } from 'src/app/services/ingredients.service';
+import { SpoonacularService } from 'src/app/services/spoonacular.service';
 import { Ingredient } from 'src/app/models/Ingredient';
 import { NgFor } from '@angular/common';
 import { MyIngredientsListService } from 'src/app/services/my-ingredients-list.service';
@@ -14,14 +14,19 @@ export class IngredientsSearcherComponent{
 
   public ingredients!: Ingredient[];
 
-  constructor(protected ingredientsService: IngredientsService,
+  constructor(protected spoonacularService: SpoonacularService,
     protected myIngredientsListService: MyIngredientsListService) { }
 
   onSearch() {
-    this.ingredients = this.ingredientsService.getIngredients(this.searchQuery);
+    this.ingredients = this.spoonacularService.getIngredients(this.searchQuery);
   }
   pickIngredient(ingredient: Ingredient) : void {
     this.myIngredientsListService.addIngredient(ingredient);
-    console.log(this.myIngredientsListService.getIngredients());
+    this.clearQueryAndResults();
+  }
+  protected clearQueryAndResults() { 
+    // method that shold be called after picking ingredient and clear input and search result
+    this.ingredients = [];
+    this.searchQuery = '';
   }
 }
