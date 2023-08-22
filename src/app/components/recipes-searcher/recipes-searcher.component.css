@@ -1,8 +1,17 @@
 :host {
-    display: flex;
-    flex-direction: row;
     margin-left: auto;
     margin-right: auto;
+}
+#recipe-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#ingredients-searcher {
+    display: flex;
+    flex-direction: row;
+    min-height: 300px;
 }
 #searcher {
     display: block;
@@ -10,7 +19,6 @@
     width: fit-content;
     padding: 10px;
 }
-
 #my-list {
     display: block;
     margin-left: auto;

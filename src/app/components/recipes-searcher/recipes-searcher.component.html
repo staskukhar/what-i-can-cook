@@ -1,2 +1,8 @@
-<app-ingredients-list id="my-list"></app-ingredients-list>
-<app-ingredients-searcher id="searcher"></app-ingredients-searcher>
+<div id="ingredients-searcher">
+    <app-ingredients-list id="my-list"></app-ingredients-list>
+    <app-ingredients-searcher id="searcher"></app-ingredients-searcher>
+</div>
+<div id="recipe-container">
+    <button (click)="onSearch()">What fits</button>
+    <app-recipe *ngFor="let recipe of recipes" [recipe]="recipe" id="recipe"></app-recipe>
+</div>
