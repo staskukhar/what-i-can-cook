@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RecipesSearcherComponent } from './components/recipes-searcher/recipes-searcher.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { RecipeSliderComponent } from './components/recipe-slider/recipe-slider.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RecipeComponent } from './components/recipe/recipe.component';
         IngredientsListComponent,
         NavBarComponent,
         RecipesSearcherComponent,
-        RecipeComponent
+        RecipeComponent,
+        RecipeSliderComponent
     ],
     providers: [MyIngredientsListService],
     bootstrap: [AppComponent],
