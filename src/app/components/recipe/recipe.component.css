@@ -24,3 +24,12 @@
 :host {
     width: 100%;
 }
+.recipe-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.link-button {
+    width: fit-content;
+    margin-left: auto;
+}

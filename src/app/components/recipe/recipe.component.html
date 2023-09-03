@@ -1,8 +1,11 @@
-<div class="recipe-card">
+<div class="recipe-card" *ngIf="recipe">
     <div class="recipe-face">
-        <img [src]="recipe.image"alt="Recipe image">
+        <img [src]="recipe.image!"alt="Recipe image">
         <hr>
-        <span>{{recipe.title}}</span>
+        <div class="recipe-info">
+            <span>{{recipe.title}}</span>
+            <button class="button link-button" (click)="openOriginalSource(recipe.id)">More</button>
+        </div>
     </div>
 </div>
     
