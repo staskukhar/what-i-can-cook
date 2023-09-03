@@ -1,0 +1,10 @@
+<div *ngIf="recipeList">
+    <app-recipe [recipe]="recipeList[activeRecipeIndex]"></app-recipe>
+    <div class="picker-holder">
+        <div [ngClass]="i == activeRecipeIndex ? 'active-picker' : 'picker'" 
+            *ngFor="let r of recipeList; 
+            let i = index" 
+            (click)="makeActive(i)">
+        </div>
+    </div>
+</div>

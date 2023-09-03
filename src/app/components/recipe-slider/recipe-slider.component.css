@@ -1,0 +1,26 @@
+.picker-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.picker {
+    background-color: #BAD7F2;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 8px;
+}
+.picker:hover {
+    background-color: lightgreen;
+    height: 50px;
+    border: inherit black 2px;
+}
+.active-picker {
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0);
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: solid #BAD7F2 5px;
+    border-radius: 8px;
+}
