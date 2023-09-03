@@ -1,13 +1,15 @@
 <div class="search-container">
   <div class="input-container">
-    <input type="text" [(ngModel)]="searchQuery">
+    <input type="text" [(ngModel)]="searchQuery" (focus)="resultBoxActive(true)" (blur)="resultBoxActive(false)">
     <button (click)="onSearch()">
       <img src="assets/images/loupe.png" alt="search">
     </button>
   </div>
-  <div class='query-result' 
+  <div class="results-panel" *ngIf="isEditActive">
+    <div class='query-result' 
     *ngFor="let ingredient of ingredients"
     (click)="pickIngredient(ingredient)">
     <span>{{ingredient.name}}</span>
-  </div>  
+  </div> 
+  </div> 
 </div>

@@ -11,6 +11,7 @@ import { MyIngredientsListService } from 'src/app/services/my-ingredients-list.s
 })
 export class IngredientsSearcherComponent{
   searchQuery: string = '';
+  isEditActive: boolean = false;
 
   public ingredients!: Ingredient[];
 
@@ -18,6 +19,7 @@ export class IngredientsSearcherComponent{
     protected myIngredientsListService: MyIngredientsListService) { }
 
   onSearch() {
+    this.resultBoxActive(true);
     this.ingredients = this.spoonacularService.getIngredients(this.searchQuery);
   }
   pickIngredient(ingredient: Ingredient) : void {
@@ -28,5 +30,9 @@ export class IngredientsSearcherComponent{
     // method that shold be called after picking ingredient and clear input and search result
     this.ingredients = [];
     this.searchQuery = '';
+  }
+  resultBoxActive(active: boolean): void 
+  {
+    this.isEditActive = active;
   }
 }
