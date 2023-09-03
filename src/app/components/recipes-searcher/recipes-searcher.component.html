@@ -4,5 +4,5 @@
 </div>
 <div id="recipe-container">
     <button (click)="onSearch()">What fits</button>
-    <app-recipe *ngFor="let recipe of recipes" [recipe]="recipe" id="recipe"></app-recipe>
+    <app-recipe-slider [recipeList]="recipes" [activeRecipeIndex]="0" [hidden]="!recipes"></app-recipe-slider>
 </div>
