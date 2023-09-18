@@ -3,6 +3,6 @@
     <app-ingredients-searcher id="searcher"></app-ingredients-searcher>
 </div>
 <div id="recipe-container">
-    <button (click)="onSearch()">What fits</button>
+    <button class="button" (click)="onSearch()">What fits</button>
     <app-recipe-slider [recipeList]="recipes" [activeRecipeIndex]="0" [hidden]="!recipes"></app-recipe-slider>
 </div>
