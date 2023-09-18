@@ -12,6 +12,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RecipesSearcherComponent } from './components/recipes-searcher/recipes-searcher.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeSliderComponent } from './components/recipe-slider/recipe-slider.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RecipeSliderComponent } from './components/recipe-slider/recipe-slider.
         NavBarComponent,
         RecipesSearcherComponent,
         RecipeComponent,
-        RecipeSliderComponent
+        RecipeSliderComponent,
+        LoginComponent
     ],
     providers: [MyIngredientsListService],
     bootstrap: [AppComponent],
