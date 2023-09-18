@@ -4,12 +4,14 @@
     height: 100dvh;
     background-color: #F2BAC9;
     flex-direction: column;
+    justify-content: space-between;
 }
 .main-nav-bar>nav {
     list-style: none;
 }
 .nav-bar-item>a>img {
     height: 50px;
+    padding: 4px;
 }
 .nav-bar-item>a :hover {
     background-color: #BAF2BB;
