@@ -25,7 +25,7 @@ builder.Services.AddAuthentication(
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(signingKey)),
             ValidateLifetime = true,
-            ValidateAudience = false,
+            ValidateAudience = true,
             ClockSkew = TimeSpan.Zero,
             ValidateIssuer = true,
         };
@@ -43,6 +43,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

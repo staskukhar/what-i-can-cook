@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj": {}
+    "D:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj": {}
   },
   "projects": {
-    "d:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj": {
+    "D:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj",
+        "projectUniqueName": "D:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj",
         "projectName": "WhatICanCookAPI",
-        "projectPath": "d:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj",
+        "projectPath": "D:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj",
         "packagesPath": "C:\\Users\\stas\\.nuget\\packages\\",
-        "outputPath": "d:\\what-i-can-cook\\WhatICanCookAPI\\obj\\",
+        "outputPath": "D:\\what-i-can-cook\\WhatICanCookAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stas\\AppData\\Roaming\\NuGet\\NuGet.Config"

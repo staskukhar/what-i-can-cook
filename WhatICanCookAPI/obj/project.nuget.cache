@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UcVvADM8G/tbd1lYSl6K/EPu9dwEtkK8mBcHaErP5KlDWMJRToQhYtHHKvGis/UOxhlQ5jlSiAaxWYWV1n+eGg==",
+  "dgSpecHash": "uastPtsEV7aewx3hL7nRVxNKo/207CztVmL4xF34ejzetWgXYhHdNV9GVcrnPJNi1w/EsZnwxdiqgsCVQDcEqg==",
   "success": true,
-  "projectFilePath": "d:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj",
+  "projectFilePath": "D:\\what-i-can-cook\\WhatICanCookAPI\\WhatICanCookAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stas\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.4\\microsoft.aspnetcore.authentication.jwtbearer.6.0.4.nupkg.sha512",
     "C:\\Users\\stas\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
