@@ -1,0 +1,1 @@
+public record AuthSettings(string Audience, string Issuer, string IssuerSigningKey, int ExpiresAt) {}
