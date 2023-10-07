@@ -17,7 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var authSettings = builder.Configuration.GetValue<AuthSettings>("AuthSettings");
+var authSettings = builder.Configuration.GetSection("AuthSettings").Get<AuthSettings>();
 
 builder.Services.AddAuthentication( options => 
     {
@@ -25,9 +25,10 @@ builder.Services.AddAuthentication( options =>
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
     }
-    ).AddJwtBearer(
-        options => {
-            options.TokenValidationParameters = new TokenValidationParameters{
+    ).AddJwtBearer( options => 
+        {
+            options.TokenValidationParameters = new TokenValidationParameters 
+            {
                 ValidateIssuerSigningKey = true,
                 ValidateLifetime = true,
                 ValidateAudience = true,
@@ -35,7 +36,7 @@ builder.Services.AddAuthentication( options =>
                 ClockSkew = TimeSpan.Zero,
                 ValidIssuer = authSettings.Issuer,
                 ValidAudience = authSettings.Audience,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(authSettings.IssuerSigningKey)),
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authSettings.IssuerSigningKey)),
             };
         }
     );
