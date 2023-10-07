@@ -46,7 +46,7 @@ builder.Services.AddIdentityCore<UserModel>(options =>
         options.Password.RequiredLength = 8;
         options.Password.RequireLowercase = true;
         options.Password.RequireUppercase = true;
-    });
+    }).AddEntityFrameworkStores<WICCDBContext>();
 
 var app = builder.Build();
 
