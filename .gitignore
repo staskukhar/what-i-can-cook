@@ -43,4 +43,5 @@ Thumbs.db
 src/environments/environment.ts
 WhatICanCookAPI/appsettings.json
 WhatICanCookAPI/bin/Debug/net6.0/appsettings.json
-WhatICanCookAPI/bin\Debug/net6.0
+WhatICanCookAPI/bin/Debug/net6.0
+WhatICanCookAPI/bin
