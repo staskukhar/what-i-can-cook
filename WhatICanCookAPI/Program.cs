@@ -40,7 +40,7 @@ builder.Services.AddAuthentication( options =>
         }
     );
 
-builder.Services.AddIdentityCore<IdentityUser>(options => 
+builder.Services.AddIdentityCore<UserModel>(options => 
     {
         options.SignIn.RequireConfirmedEmail = true;
         options.Password.RequiredLength = 8;
