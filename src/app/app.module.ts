@@ -13,6 +13,7 @@ import { RecipesSearcherComponent } from './components/recipes-searcher/recipes-
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeSliderComponent } from './components/recipe-slider/recipe-slider.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LoginComponent } from './components/login/login.component';
         RecipesSearcherComponent,
         RecipeComponent,
         RecipeSliderComponent,
-        LoginComponent
+        LoginComponent,
+        SignupComponent
     ],
     providers: [MyIngredientsListService],
     bootstrap: [AppComponent],
