@@ -41,6 +41,7 @@ public class UserAuthController : ControllerBase
                 Name = user.Name,
                 Surname = user.Surname,
                 Email = user.Email,
+                UserName = string.Concat(user.Name, user.Surname),
             }, 
             user.Password);
 
