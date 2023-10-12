@@ -1,6 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace WhatICanCookAPI.Controllers;
@@ -15,7 +16,8 @@ public class UserAuthController : ControllerBase
     {
         _userMananger = userManager;
     }
-
+    
+    [Route("register")]
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
@@ -30,9 +32,7 @@ public class UserAuthController : ControllerBase
 
         if(searchResults != null)
         {
-            ModelState.AddModelError("Email collusion", $"User by Email: {user.Email} already exist");
-
-            return Conflict(ModelState);   
+            return Conflict($"User by Email: {user.Email} already exist");   
         }
 
         var registrationResults = await _userMananger.CreateAsync(
@@ -57,4 +57,30 @@ public class UserAuthController : ControllerBase
 
         return BadRequest(ModelState);
     } 
+
+    [Route("login")]
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IActionResult> UserLogin([FromBody] LoginUserModel loggingUser)
+    {
+        if(!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var user = await _userMananger.FindByEmailAsync(loggingUser.Email);
+
+        if(user == null)
+        {
+            return BadRequest($"Seems like user by email: {loggingUser.Email} doesn't exist.");
+        }
+
+        if(! await _userMananger.CheckPasswordAsync(user, loggingUser.Password)) 
+        {
+            return Unauthorized("Ups, seems like your password is incorrect!");
+        }
+        // at the bottom is case when we have correctly logged user, who must receive access token
+        return Ok("Here should be the access token"); 
+    }
 }
