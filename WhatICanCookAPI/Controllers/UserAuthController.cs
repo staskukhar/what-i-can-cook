@@ -11,10 +11,18 @@ namespace WhatICanCookAPI.Controllers;
 public class UserAuthController : ControllerBase 
 {
     private readonly UserManager<UserModel> _userMananger;
+    private readonly ITokenService _tokenService;
+    private readonly ITokenRepository _tokenRepository;
 
-    public UserAuthController(UserManager<UserModel> userManager)
+    public UserAuthController(
+        UserManager<UserModel> userManager, 
+        ITokenService tokenService,
+        ITokenRepository tokenRepository)
     {
         _userMananger = userManager;
+        _tokenService = tokenService;
+        _tokenRepository = tokenRepository;
+
     }
     
     [Route("register")]
@@ -81,6 +89,39 @@ public class UserAuthController : ControllerBase
             return Unauthorized("Ups, seems like your password is incorrect!");
         }
         // at the bottom is case when we have correctly logged user, who must receive access token
-        return Ok("Here should be the access token"); 
+        var accessToken = _tokenService.GetAcccessToken(user);
+        var refreshTokenResults = _userMananger.CreateSecurityTokenAsync(user);
+        var refreshToken = new RefreshTokenDTO(refreshTokenResults.Result, 7, user.Id);
+
+        _tokenRepository.StoreRefreshToken(refreshToken);
+
+        return Ok(new LoginResponse(accessToken, refreshToken, user)); 
+    }
+    [HttpPost]
+    [Route("RefreshToken")]
+    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequestModel requestModel)
+    {
+        var tokenByID = _tokenRepository.GetRefreshTokenByID(requestModel.Id);
+
+        var user = await _userMananger.FindByIdAsync(requestModel.Id);
+
+        if(tokenByID == null || user == null)
+        {
+            return BadRequest($"Invalid id: {requestModel.Id}");
+        }
+
+        if(_tokenService.IsRefreshTokenExpired(tokenByID))
+        {
+            return BadRequest("Token is expired");
+        }
+
+        if(!_tokenService.AreTokensEquals(tokenByID.Token, requestModel.refreshToken))
+        {
+            return Unauthorized("The passed token isn't valid");
+        }
+
+        var accessToken = _tokenService.GetAcccessToken(user);
+
+        return Ok(accessToken);
     }
 }
